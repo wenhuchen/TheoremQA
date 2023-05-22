@@ -42,6 +42,7 @@ This will write otuput to outputs/GPT4_PoT_s0...
 
 
 ### Evaluate model output
+You need to register an wolfram|alpha account to use their free API, checkout https://products.wolframalpha.com/api to register. Once you are done, you should receive an API_KEY.
 ```
 export OPENAI_KEY=[YOUR_KEY]
 export WOLFRAM_KEY=[YOUR_KEY]
