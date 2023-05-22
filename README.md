@@ -7,6 +7,7 @@ We propose the first question-answering dataset driven by STEM theorems. We anno
 <img src="overview.001.jpeg" width="1000">
 </p>
 
+The dataset covers a wide range of topcis listed below:
 <p align="center">
 <img src="fields.png" width="700">
 </p>
