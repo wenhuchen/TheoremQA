@@ -16,6 +16,10 @@ We propose the first question-answering dataset driven by STEM theorems. We anno
 <img src="examples.002.jpeg" width="400">
 </p>
 
+## Files
+- theoremqa_test.json: this file contains all the annotated question-answer pairs.
+- all_theorems.json: this file contains the textual description of all the theorems being covered.
+
 ## Running Instruction
 
 ### Dependency
