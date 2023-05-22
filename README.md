@@ -7,6 +7,10 @@ We propose the first question-answering dataset driven by STEM theorems. We anno
 <img src="overview.001.jpeg" width="1000">
 </p>
 
+<p align="center">
+<img src="fields.png" width="700">
+</p>
+
 ## Examples
 <p align="center">
 <img src="examples.001.jpeg" width="400">
