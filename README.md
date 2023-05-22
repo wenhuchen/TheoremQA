@@ -43,6 +43,8 @@ This will write otuput to outputs/GPT4_PoT_s0...
 
 ### Evaluate model output
 ```
+export OPENAI_KEY=[YOUR_KEY]
+export WOLFRAM_KEY=[YOUR_KEY]
 python predict_accuracy.py outputs/[YOUR_FILE]
 ```
 This will write a evaluation output as outputs/[YOUR_FILE].corrected
