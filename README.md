@@ -9,9 +9,45 @@ We propose the first question-answering dataset driven by STEM theorems. We anno
 
 ## Examples
 <p align="center">
-<img src="examples.001.jpeg" width="600">
+<img src="examples.001.jpeg" width="400">
 </p>
 
 <p align="center">
-<img src="examples.002.jpeg" width="600">
+<img src="examples.002.jpeg" width="400">
 </p>
+
+## Running Instruction
+
+### Dependency
+- openai == 0.27.6
+- wolframalpha == 5.0.0
+- pytorch == py3.8_cuda11.8_cudnn8.7.0_0
+- sympy == 1.11.1
+- transformers == 4.29.1
+- accelerate == 0.19.0
+- anthropic == 0.2.9
+
+
+### Chain-of-Thoughts Prompting
+```
+python run_gpt4.py
+```
+This will write otuput to outputs/GPT4_s0...
+
+### Program-of-Thoughts Prompting
+```
+python run_gpt4_pot.py
+```
+This will write otuput to outputs/GPT4_PoT_s0...
+
+
+### Evaluate model output
+```
+python predict_accuracy.py outputs/[YOUR_FILE]
+```
+This will write a evaluation output as outputs/[YOUR_FILE].corrected
+
+### Analyze the model output
+```
+python analyze_results.py outputs/[YOUR_FILE].corrected
+```
