@@ -12,10 +12,7 @@ from tqdm import tqdm
 import math  # Very important for evaluation
 
 def extract_answer(query: str):
-    openai.api_key = os.getenv('AZURE_KEY')
-    openai.api_type = 'azure'
-    openai.api_base = 'https://waterloogpt.openai.azure.com/'
-    openai.api_version = "2023-03-15-preview"
+    openai.api_key = os.getenv('OPENAI_KEY')
     SYSTEMQ = "You are supposed to extract the numeric answer (answer or Python formula or latex form) from a given string. If there is a unit in the input, try to remove that and only keep the number. If you think there is no numerical number within the input, just return 0."
     # greedy decoding
     got_result = False
@@ -73,7 +70,7 @@ Output:"""
     return result
 
 def get_decimal_with_wolfram(string: str) -> float:
-    API_KEY = 'AU7JWQ-87JVYK8VW2'
+    API_KEY = os.getenv('WOLFRAM_KEY')
     client = wolframalpha.Client(API_KEY)
     for ex in client.query(f'compute {string}').pods:
         if ex['@title'] in ['Decimal approximation', 'Decimal form']:
