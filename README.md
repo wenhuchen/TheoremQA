@@ -24,6 +24,9 @@ The dataset covers a wide range of topcis listed below:
 ## Files
 - theoremqa_test.json: this file contains all the annotated question-answer pairs.
 - all_theorems.json: this file contains the textual description of all the theorems being covered.
+- outputs/\*.json.corrected: this folder contains all the model outputs.
+
+Visualize the GPT-4 output in https://github.com/wenhuchen/TheoremQA/blob/main/visualize.ipynb. 
 
 ## Running Instruction
 
