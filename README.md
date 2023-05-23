@@ -66,3 +66,35 @@ This will write a evaluation output as outputs/[YOUR_FILE].corrected
 ```
 python analyze_results.py outputs/[YOUR_FILE].corrected
 ```
+
+## Leaderboard
+
+| Model              | Method   | Accuracy                    |
+| -------------------| -------- | --------------------------- |
+| GPT-4              | PoT      | 51.5                        |
+| GPT-4              | CoT      | 43.4                        |
+| ChatGPT            | PoT      | 35.6                        |
+| ChatGPT            | CoT      | 30.2                        |
+| GPT-3.5            | PoT      | 27.8                        |
+| Claude-v1          | PoT      | 25.9                        |
+| Claude-v1          | CoT      | 24.9                        |
+| GPT-3.5            | CoT      | 22.8                        |
+| GPT-3              | PoT      | 20.6                        |
+| GPT-3              | CoT      | 16.6                        |
+| Alpaca             | CoT      | 13.5                        |
+| Vicuna             | CoT      | 12.9                        |
+| Vicuna             | CoT      | 12.9                        |
+| MOSS               | CoT      | 12.2                        |
+| StarChat           | PoT      | 12.2                        |
+| InstructCodeT5+    | PoT      | 11.6                        |
+| OpenAssistant      | CoT      | 10.7                        |
+
+## Cite our Work
+```
+@article{chen2023theoremqa,
+  title={TheoremQA: A Theorem-driven Question Answering dataset},
+  author={Chen, Wenhu and Ming Yin, Max Ku, Elaine Wan, Xueguang Ma, Jianyu Xu, Tony Xia, Xinyi Wang, Pan Lu},
+  journal={arXiv preprint arXiv:2305.12524},
+  year={2023}
+}
+```
