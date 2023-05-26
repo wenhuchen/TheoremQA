@@ -21,6 +21,14 @@ The dataset covers a wide range of topics listed below:
 <img src="examples.002.jpeg" width="400">
 </p>
 
+## Huggingface
+Our dataset is on Huggingface now: https://huggingface.co/datasets/wenhu/TheoremQA
+```
+from datasets import load_dataset
+
+dataset = load_dataset("wenhu/TheoremQA")
+```
+
 ## Files
 - theoremqa_test.json: this file contains all the annotated question-answer pairs.
 - all_theorems.json: this file contains the textual description of all the theorems being covered.
