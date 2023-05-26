@@ -25,7 +25,6 @@ The dataset covers a wide range of topics listed below:
 Our dataset is on Huggingface now: https://huggingface.co/datasets/wenhu/TheoremQA
 ```
 from datasets import load_dataset
-
 dataset = load_dataset("wenhu/TheoremQA")
 ```
 
