@@ -60,8 +60,8 @@
     "field": "Finance"
   },
   {
-    "Question": "Suppose instead that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.",
-    "Answer": 0,
+    "Question": "Suppose that there are two firms in the market facing no costs of production and a demand curve given by Q = 150 - P for their identical products. Suppose the two firms choose prices simultaneously as in the Bertrand model. Compute the prices in the nash equilibrium.",
+    "Answer": 50,
     "Answer_type": "integer",
     "Picture": null,
     "id": "elainewan/econ_micro_15.json",
