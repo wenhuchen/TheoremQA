@@ -76,25 +76,27 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 
 ## Leaderboard
 
-| Model              | Method   | Accuracy                    |
-| -------------------| -------- | --------------------------- |
-| GPT-4              | PoT      | 51.5                        |
-| GPT-4              | CoT      | 43.4                        |
-| ChatGPT            | PoT      | 35.6                        |
-| ChatGPT            | CoT      | 30.2                        |
+| Model                                 | Method   | Accuracy                    |
+| --------------------------------------| -------- | --------------------------- |
+| GPT-4                                 | PoT      | 51.5                        |
+| GPT-4                                 | CoT      | 43.4                        |
+| ChatGPT                               | PoT      | 35.6                        |
+| ChatGPT                               | CoT      | 30.2                        |
+| PaLM-2                                | CoT      | 29.0                        |
 | GPT-3.5 (text-davinci-003)            | PoT      | 27.8                        |
-| Claude-v1          | PoT      | 25.9                        |
-| Claude-v1          | CoT      | 24.9                        |
+| Claude-v1                             | PoT      | 25.9                        |
+| Claude-v1                             | CoT      | 24.9                        |
+| Claude-instant                        | CoT      | 23.6                        |
 | GPT-3.5 (text-davinci-003)            | CoT      | 22.8                        |
 | GPT-3 (text-davinci-002)              | PoT      | 20.6                        |
 | GPT-3 (text-davinci-002)              | CoT      | 16.6                        |
-| Alpaca             | CoT      | 13.5                        |
-| Vicuna             | CoT      | 12.9                        |
-| Vicuna             | CoT      | 12.9                        |
-| MOSS               | CoT      | 12.2                        |
-| StarChat           | PoT      | 12.2                        |
-| InstructCodeT5+    | PoT      | 11.6                        |
-| OpenAssistant      | CoT      | 10.7                        |
+| Alpaca                                | CoT      | 13.5                        |
+| Vicuna                                | CoT      | 12.9                        |
+| Vicuna                                | CoT      | 12.9                        |
+| MOSS                                  | CoT      | 12.2                        |
+| StarChat                              | PoT      | 12.2                        |
+| InstructCodeT5+                       | PoT      | 11.6                        |
+| OpenAssistant                         | CoT      | 10.7                        |
 
 ## Cite our Work
 ```
