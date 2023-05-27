@@ -82,12 +82,12 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | GPT-4              | CoT      | 43.4                        |
 | ChatGPT            | PoT      | 35.6                        |
 | ChatGPT            | CoT      | 30.2                        |
-| GPT-3.5            | PoT      | 27.8                        |
+| GPT-3.5 (text-davinci-003)            | PoT      | 27.8                        |
 | Claude-v1          | PoT      | 25.9                        |
 | Claude-v1          | CoT      | 24.9                        |
-| GPT-3.5            | CoT      | 22.8                        |
-| GPT-3              | PoT      | 20.6                        |
-| GPT-3              | CoT      | 16.6                        |
+| GPT-3.5 (text-davinci-003)            | CoT      | 22.8                        |
+| GPT-3 (text-davinci-002)              | PoT      | 20.6                        |
+| GPT-3 (text-davinci-002)              | CoT      | 16.6                        |
 | Alpaca             | CoT      | 13.5                        |
 | Vicuna             | CoT      | 12.9                        |
 | Vicuna             | CoT      | 12.9                        |
