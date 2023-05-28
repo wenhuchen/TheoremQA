@@ -81,8 +81,8 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | GPT-4                                 | PoT      | 51.5                        |
 | GPT-4                                 | CoT      | 43.4                        |
 | ChatGPT                               | PoT      | 35.6                        |
+| PaLM-2                                | CoT      | 31.8                        |
 | ChatGPT                               | CoT      | 30.2                        |
-| PaLM-2                                | CoT      | 29.0                        |
 | GPT-3.5 (text-davinci-003)            | PoT      | 27.8                        |
 | Claude-v1                             | PoT      | 25.9                        |
 | Claude-v1                             | CoT      | 24.9                        |
