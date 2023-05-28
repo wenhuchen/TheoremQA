@@ -38,17 +38,18 @@ answer_type_rate = {'integer': {'correct': 0, 'wrong': 0},
 with open(filename) as f:
     data = json.load(f)
     for entry in data:
-        if entry['answer_type'].startswith('list'):
-            name = 'list'
-        else:
-            name = entry['answer_type']
+        answer_type = entry['answer_type'] if 'answer_type' in entry else entry['Answer_type']
+        if answer_type.startswith('list'):
+            answer_type = 'list'
+
         if entry['correct']:
-            answer_type_rate[name]['correct'] += 1
+            answer_type_rate[answer_type]['correct'] += 1
             answer_type_rate['all']['correct'] += 1
         else:
-            answer_type_rate[name]['wrong'] += 1
+            answer_type_rate[answer_type]['wrong'] += 1
             answer_type_rate['all']['wrong'] += 1
 
+print(answer_type_rate)
 for key in answer_type_rate:
     answer_type_rate[key] = answer_type_rate[key]['correct'] / (answer_type_rate[key]['correct'] + answer_type_rate[key]['wrong'])
 

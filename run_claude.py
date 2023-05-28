@@ -8,6 +8,7 @@ import re
 parser = argparse.ArgumentParser()
 parser.add_argument("--start", default=0, type=int)
 parser.add_argument("--end", default=-1, type=int)
+parser.add_argument("--version", default="claude-v1", type=str)
 parser.add_argument("--answered", default=None, type=str)
 
 args = parser.parse_args()
@@ -19,7 +20,7 @@ def run_prompt(full_prompt: str):
         prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {anthropic.AI_PROMPT}",
         stop_sequences=[anthropic.HUMAN_PROMPT],
         max_tokens_to_sample=1024,
-        model="claude-v1",
+        model=args.version,
         temperature=0.0,
         stream=False,
     )
@@ -35,7 +36,7 @@ def run_bool_prompt(full_prompt: str):
         prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n PPlease think step by step, and then conclude the answer as `therefore, the answer is True/False' {anthropic.AI_PROMPT}",
         stop_sequences=[anthropic.HUMAN_PROMPT],
         max_tokens_to_sample=1024,
-        model="claude-v1",
+        model=args.version,
         temperature=0.0,
         stream=False,
     )
@@ -51,7 +52,7 @@ def run_option_prompt(full_prompt: str):
         prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
         stop_sequences=[anthropic.HUMAN_PROMPT],
         max_tokens_to_sample=1024,
-        model="claude-v1",
+        model=args.version,
         temperature=0.0,
         stream=False,
     )
@@ -81,7 +82,7 @@ def main():
     else:
         test_set = test_set[args.start : args.end]
 
-    filename = f'outputs/Claude_s{args.start}_e{args.end}_{dt_string}.jsonl'
+    filename = f'outputs/{args.version}_s{args.start}_e{args.end}_{dt_string}.jsonl'
     writer = open(filename, 'w')
     for example in test_set:
 

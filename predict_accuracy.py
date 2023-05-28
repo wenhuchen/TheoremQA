@@ -12,13 +12,16 @@ from tqdm import tqdm
 import math  # Very important for evaluation
 
 def extract_answer(query: str):
-    openai.api_key = os.getenv('OPENAI_KEY')
+    openai.api_key = os.getenv('AZURE_KEY')
+    openai.api_type = 'azure'
+    openai.api_base = 'https://waterloogpt.openai.azure.com/'
+    openai.api_version = "2023-03-15-preview"
     SYSTEMQ = "You are supposed to extract the numeric answer (answer or Python formula or latex form) from a given string. If there is a unit in the input, try to remove that and only keep the number. If you think there is no numerical number within the input, just return 0."
     # greedy decoding
     got_result = False
     full_prompt = f"""
-Input: 1.002. This means that it will take 1002 iterations to reach the root of the equation using the Aitken ∆2-process
-Output: 1.002
+Input: 1/8 for both starting positions
+Output: 1/8
 
 Input: 0 an Euler homogeneous equation?
 Output: 0
@@ -29,14 +32,8 @@ Output: [2, 3, 4]
 Input: Therefore, it will take 330 ms for client A to receive the whole file from the server after sending a request
 Output: 330
 
-Input: 1.16 \times math.pow(10, 9) Hz
-Output: 1.16 * math.pow(10, 9)
-
 Input: 3.02xmath.pow(10, 16) V
 Output: 3.02*math.pow(10, 16)
-
-Input: 1/8 for both starting positions
-Output: 1/8
 
 Input: 4kHz
 Output: 4
@@ -49,6 +46,15 @@ Output: 13133.4
 
 Input: x^y - 2e(x)
 Output: 0
+
+Input: 0.3465735 (approximate value)
+Output: 0.3465735
+
+Input: 3 and 4
+Output: [3, 4]
+
+Input: 3.57 * 10^(-29)
+Output: 3.57 * math.pow(10, -29)
 
 Input: {query}
 Output:"""
@@ -70,7 +76,7 @@ Output:"""
     return result
 
 def get_decimal_with_wolfram(string: str) -> float:
-    API_KEY = os.getenv('WOLFRAM_KEY')
+    API_KEY = 'AU7JWQ-87JVYK8VW2'
     client = wolframalpha.Client(API_KEY)
     for ex in client.query(f'compute {string}').pods:
         if ex['@title'] in ['Decimal approximation', 'Decimal form']:
@@ -259,19 +265,35 @@ if __name__ == "__main__":
     name = sys.argv[1]
     print('Reading from file: ', name)
 
-    correct = 0
+    if 'jsonl' in name:
+        all_entries = []
+        with open(name, 'r') as f:
+            for line in f:
+                entry = json.loads(line.strip())
+                all_entries.append(entry)
+    elif 'json' in name:
+        with open(name, 'r') as f:
+            all_entries = json.load(f)
+    else:
+        raise NotImplementedError('does not recognize the suffix')
+    print(f'Finished reading input containing {len(all_entries)} entries')
+
     new_entries = []
-    with open(name, 'r') as f:
-        count = 0
-        for line in tqdm(f):
-            entry = json.loads(line.strip())
-            need_further_parsing = False
-            prediction = entry['prediction']
+    correct = 0
+    for entry in tqdm(all_entries):
+        need_further_parsing = False
+        prediction = entry['prediction']
+        if 'answer' in entry:
             gt = entry['answer']
+        else:
+            gt = entry['Answer']
+        if 'answer_type' in entry:
             answer_type = entry['answer_type']
+        else:
+            answer_type = entry['Answer_type']
 
-            prediction = normalize(prediction)
-
+        prediction = normalize(prediction)
+        if isinstance(prediction, (str, int, float)) or isinstance(prediction, list):
             # Comparing prediction against the reference
             if answer_type in ['bool', 'option', 'Option']:
                 cur_correct = int(prediction == gt)
@@ -282,13 +304,17 @@ if __name__ == "__main__":
             elif answer_type in ['list of integer', 'list of float']:
                 cur_correct = int(compare_two_list(prediction, gt))
             entry['prediction'] = prediction
-            entry['correct'] = bool(cur_correct)
-            new_entries.append(entry)
+        else:
+            entry['prediction'] = str(prediction)
+            cur_correct = 0
+            print('FAIL TO PARSE:', prediction)
 
-            correct += cur_correct
-            count += 1
+        entry['correct'] = bool(cur_correct)
+        new_entries.append(entry)
 
-    print('accuracy =', correct / count)
+        correct += cur_correct
+
+    print('accuracy =', correct / len(all_entries))
 
     with open(name + '.corrected', 'w') as f:
         json.dump(new_entries, f, indent=2)
