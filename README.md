@@ -79,8 +79,8 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 
 | Model                                 | Method   | Accuracy                    |
 | --------------------------------------| -------- | --------------------------- |
-| GPT-4                                 | PoT      | 51.5                        |
-| GPT-4                                 | CoT      | 43.4                        |
+| GPT-4                                 | PoT      | 52.4                        |
+| GPT-4                                 | CoT      | 43.8                        |
 | ChatGPT                               | PoT      | 35.6                        |
 | PaLM-2                                | CoT      | 31.8                        |
 | ChatGPT                               | CoT      | 30.2                        |
