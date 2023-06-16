@@ -1,1 +1,0 @@
-Let (x+11)/(x+7) = k, where k is an integer. Then, x+11 = k(x+7), which simplifies to x(1-k) = 7k-11. For (x+11)/(x+7) to be an integer, 7k-11 must be divisible by 1-k. Since 1-k divides 7k-7 and 7k-11 = (7k-7) - 4, we have that 1-k divides -4. Therefore, k can be -3, -1, 0, 2, 3, or 5. We can verify that all other values of k do not work, and the only valid answer is -3.

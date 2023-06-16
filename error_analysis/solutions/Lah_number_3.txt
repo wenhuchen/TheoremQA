@@ -1,1 +1,0 @@
-Unsigned Lah numbers $L(n,k)=(n-1 choose k-1)\cdot\frac{n!}{k!}$ count the number of ways a set of n elements can be partitioned into k nonempty linearly ordered subsets. Let n=6 and k=2 and we know that $L(6,2)=1800$ is the answer.

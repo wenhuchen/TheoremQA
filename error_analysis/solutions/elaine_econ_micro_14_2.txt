@@ -1,1 +1,0 @@
-The marginal revenue curve has the same intercept as the inverse demand curve and twice the slope: MR = 60 - 2Q. Marginal cost is a constant $10. Setting MR = MC, The optimal quantity is Q=25. Optimal price is then P = 60 - Q = 35.

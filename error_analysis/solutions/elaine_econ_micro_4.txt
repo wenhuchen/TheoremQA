@@ -1,7 +1,0 @@
-Since Paul's trying to optimize utility, we can always assume that he spends up his money as much as possible. We can then list out a few possibilities:
-1. t = 0, s = 4. U(t, s) = \sqrt{ts} = 0
-2. t = 1, s = 3. Since Paul will still have $0.15 to spend, he will get one more Twinkie, making t = 2, s = 3. U(t, s) = \sqrt{ts} = \sqrt{6}
-3. t = 3, s = 2. Since Paul will still have $0.2 to spend, he will get two more Twinkies, making t = 5, s = 2. U(t, s) = \sqrt{ts} = \sqrt{10}
-4. t = 6, s = 1. Since Paul will still have $0.15 to spend, he will get one more Twinkie, making t = 7, s = 1. U(t, s) = \sqrt{ts} = \sqrt{7}
-4. t = 8, s = 0. Since Paul will still have $0.2 to spend, he will get two more Twinkies, making t = 10, s = 0. U(t, s) = \sqrt{ts} = \sqrt{0}
-Therefore, utility is maximized thwn t = 5.

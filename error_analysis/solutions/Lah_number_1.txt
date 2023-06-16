@@ -1,1 +1,0 @@
-Unsigned Lah numbers $L(n,k)=(n-1 choose k-1)\cdot\frac{n!}{k!}$ count the number of ways a set of n elements can be partitioned into k nonempty linearly ordered subsets. Let n=7 and k=3 and we know that $L(7,3)=12600$ is the answer.

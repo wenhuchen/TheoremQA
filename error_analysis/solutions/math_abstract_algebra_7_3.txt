@@ -1,1 +1,0 @@
-Group S_3 has order 6. Group Z_2 has order 2. By definition, Group S_3 * Z_2 has order 6 * 2 = 12.

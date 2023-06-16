@@ -1,1 +1,0 @@
-If a number is divisible by a power of three, then its sum of digits is divisible by this power of three. We notice that the sum of digits of this number isn't divisible by 9. Thus the answer is 1.

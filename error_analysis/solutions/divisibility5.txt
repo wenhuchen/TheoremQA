@@ -1,5 +1,0 @@
-Note that 3^4 ≡ 81 ≡ 1 mod 5. Let x be defined as x ≡ s mod 20, where s ≤ 20. Then
-x ≡ s mod 4 and x ≡ s mod 5. These imply that 3^x ≡ 3^s mod 20 and x^2 ≡ s^2 mod 20, so
-3^x − x^2 ≡ 3^s − s^2 ≡ 0 mod 20.
-After trying values, you will find that s = 2, 4, 16, or 18 are the only values possible. Thus,
-that are 4 ∗ 5 = 20 possible values of x ≤ 100.

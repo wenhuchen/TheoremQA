@@ -1,1 +1,0 @@
-The total number of dividing an (n+2)-edge convex polygon is Catalan Number C_n, which equals (2n choose n)/(n+1). Let n=6 and we get the result as 132.

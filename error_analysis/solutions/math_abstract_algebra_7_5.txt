@@ -1,4 +1,0 @@
-By definition, the order of the element 5 in U_8 is the smallest positive integer n such that 5^n = 1 mod 8. We can simply list out possible cases.
-n = 1, 5^n = 5 != 1 mod 8.
-n=2, 5^n = 25 == 1 mod 8.
-Therefore, 5 has an order of 2 in U_8.

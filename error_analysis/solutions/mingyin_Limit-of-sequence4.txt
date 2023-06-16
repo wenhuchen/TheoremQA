@@ -1,1 +1,0 @@
-By setting a_n^3=1/(3n), it can be verified that the condtion \lim a_n\sum_{i=1}^n a_i^2=1 holds true.

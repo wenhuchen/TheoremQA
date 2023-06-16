@@ -1,1 +1,0 @@
-The max number of edges in a simple triangle free planar graph is 2v-4. Since v is 30, the max number of edges is 56.

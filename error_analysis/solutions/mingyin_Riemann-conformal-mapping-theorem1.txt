@@ -1,1 +1,0 @@
-This can be achieved by applying Riemann-conformal-mapping-theorem.

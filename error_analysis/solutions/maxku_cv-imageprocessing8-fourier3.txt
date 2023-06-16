@@ -1,7 +1,0 @@
-By just looking at the first 3 components:
-
-Circle: 0, 40, 0
-O : 35, 129, 0
-
-first component is the DC component. It indicates a Translation.
-Therefore O is likely a scaled Circle with translation.

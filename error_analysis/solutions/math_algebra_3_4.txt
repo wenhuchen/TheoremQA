@@ -1,1 +1,0 @@
-By definition, if [1, 2], [2, 3], and [3, 4] are linearly independent, then there is a non-trivial linear combination of the 3 vectors that equals 0. It is easy to see that 1*[1, 2] + (-2)*[2, 3] + 1*[3, 4] = [0, 0]. Therefore, [1, 2], [2, 3], and [3, 4] are not linearly independent.

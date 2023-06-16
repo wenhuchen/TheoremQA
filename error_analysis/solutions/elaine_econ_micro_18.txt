@@ -1,1 +1,0 @@
-Since shareholder shares half the revenue with Clare, expected payment to Clare: 0.5 * ($1000 / 2) + 0.5 * ($400 / 2) = $350. Expected utility = $350 - $100 = $250.

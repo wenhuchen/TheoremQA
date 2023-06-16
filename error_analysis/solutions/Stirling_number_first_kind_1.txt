@@ -1,1 +1,0 @@
-The absolute value of Stirling number of the first kind |s(n,k)| is the number of permuting n elements into k cycles. Let n=5 and k=3 and we know that the answer is |s(5,3)|=35.
