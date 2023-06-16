@@ -30,6 +30,7 @@ dataset = load_dataset("wenhu/TheoremQA")
 
 ## Files
 - theoremqa_test.json: this file contains all the annotated question-answer pairs.
+- theoremqa_visual_subset_test.json: this file contains the subset of visual questions if you want to specifically test that.
 - all_theorems.json: this file contains the textual description of all the theorems being covered.
 - outputs/\*.json.corrected: this folder contains all the model outputs.
 
