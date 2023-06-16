@@ -1,0 +1,25 @@
+To calculate the abnormal return, we first need to find the expected return using the Capital Asset Pricing Model (CAPM) formula:
+
+Expected Return = Rf + Beta * (Rm - Rf)
+
+Where Rf is the risk-free rate, Rm is the market return, and Beta is the beta of the portfolio.
+
+Expected Return = 0.04 + 1.8 * (0.12 - 0.04)
+Expected Return = 0.04 + 1.8 * 0.08
+Expected Return = 0.04 + 0.144
+Expected Return = 0.184
+
+Now, we need to find the actual return of the portfolio:
+
+Actual Return = (Ending Value - Beginning Value) / Beginning Value
+Actual Return = ($60,000 - $50,000) / $50,000
+Actual Return = $10,000 / $50,000
+Actual Return = 0.2
+
+Finally, we can calculate the abnormal return:
+
+Abnormal Return = Actual Return - Expected Return
+Abnormal Return = 0.2 - 0.184
+Abnormal Return = 0.016
+
+Therefore, the answer is 0.016.

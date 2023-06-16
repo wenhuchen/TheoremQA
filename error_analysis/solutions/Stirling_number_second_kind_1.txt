@@ -1,0 +1,1 @@
+The absolute value of Stirling number of the first kind |S(n,k)| is the number of dividing n elements into k sets. Let n=7 and k=2 and we know that the answer is |S(7,2)|=63.

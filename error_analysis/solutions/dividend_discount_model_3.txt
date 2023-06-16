@@ -1,0 +1,1 @@
+Here, we use the dividend discount model formula for zero growth dividends: Dividend Discount Model Formula = Intrinsic Value = Annual Dividends / Required Rate of Return Intrinsic Value = $1.90/0.09 = $21.11. So the answer is 21.11

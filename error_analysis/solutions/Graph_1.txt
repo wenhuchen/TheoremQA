@@ -1,0 +1,1 @@
+On the one hand, this number must be > 2 (or otherwise we may connect them such that there is no 3-clique or 2-independent-set). On the other hand, 3 vertices are enough: If they are mutually connected, then it forms a 3-clique. Else there exists two vertices not being connected, and they form a 2-independent set.

@@ -1,0 +1,8 @@
+The formula for cylinder resistor is R = (ρ / 2π * L) * ln(R_o/R_i)
+resistivity = 3.5e-5
+length = 0.9e-3
+inner_radius = 0.2e-3
+outer_radius = 0.3e-3
+
+resistance = (resistivity * 2 * math.pi * length) / math.log(outer_radius / inner_radius)
+resistance = 2.5 mOmega

@@ -1,0 +1,1 @@
+The total number of arranging n pairs of parentheses are Catalan Number C_n, which equals (2n choose n)/(n+1). Let n=6 and we get the result as 132.

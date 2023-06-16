@@ -10,12 +10,19 @@ import os
 from time import sleep
 from tqdm import tqdm
 import math  # Very important for evaluation
+wolfram_client = wolframalpha.Client(os.getenv('WOLFRAM_KEY'))
 
-def extract_answer(query: str):
-    openai.api_key = os.getenv('AZURE_KEY')
-    openai.api_type = 'azure'
-    openai.api_base = 'https://waterloogpt.openai.azure.com/'
-    openai.api_version = "2023-03-15-preview"
+def extract_answer(query: str, use_azure: bool):
+    if use_azure:
+        openai.api_key = os.getenv('AZURE_KEY')
+        openai.api_type = 'azure'
+        openai.api_base = 'https://waterloogpt.openai.azure.com/'
+        openai.api_version = "2023-03-15-preview"
+        kwargs = {'engine': 'ChatGPT'}
+    else:
+        openai.api_key = os.getenv('OPENAI_KEY')
+        kwargs = {'model': 'gpt-3.5-turbo'}
+
     SYSTEMQ = "You are supposed to extract the numeric answer (answer or Python formula or latex form) from a given string. If there is a unit in the input, try to remove that and only keep the number. If you think there is no numerical number within the input, just return 0."
     # greedy decoding
     got_result = False
@@ -61,7 +68,7 @@ Output:"""
     while not got_result:
         try:
             result = openai.ChatCompletion.create(
-                engine='ChatGPT',
+                **kwargs,
                 messages=[{"role": "system", "content": SYSTEMQ},
                           {"role": "user", "content": full_prompt}],
                 max_tokens=1028,
@@ -71,14 +78,13 @@ Output:"""
             )
             got_result = True
         except Exception as e:
+            print('Error:', e)
             sleep(3)
     result = result['choices'][0]['message']['content'].strip()
     return result
 
 def get_decimal_with_wolfram(string: str) -> float:
-    API_KEY = 'AU7JWQ-87JVYK8VW2'
-    client = wolframalpha.Client(API_KEY)
-    for ex in client.query(f'compute {string}').pods:
+    for ex in wolfram_client.query(f'compute {string}').pods:
         if ex['@title'] in ['Decimal approximation', 'Decimal form']:
             for sub in ex.subpods:
                 try:
@@ -86,7 +92,7 @@ def get_decimal_with_wolfram(string: str) -> float:
                 except Exception:
                     pass
 
-    for ex in client.query(f'compute {string}').pods:
+    for ex in wolfram_client.query(f'compute {string}').pods:
         if ex['@title'] in ['Result']:
             for sub in ex.subpods:
                 try:
@@ -226,7 +232,7 @@ def normalize(prediction: str):
         prediction = eval(prediction)
     except Exception:
         # extracting the answer with ChatGPT and try again
-        prediction = extract_answer(prediction)
+        prediction = extract_answer(prediction, False)
         try:
             prediction = eval(prediction)
         except Exception:

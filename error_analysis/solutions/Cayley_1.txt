@@ -1,0 +1,1 @@
+According to the generalized Cayley's formula on labelled forests, let T_{n,k} be the number of labelled forests on n vertices with k connected components, such that vertices 1, 2, ..., k all belong to different connected components. Then T_{n,k} = k  n^{n − k − 1}. Let n=10 and k=5, we get the answer 50000.

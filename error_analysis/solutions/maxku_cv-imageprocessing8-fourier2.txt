@@ -1,0 +1,7 @@
+By just looking at the first 3 components:
+
+Circle: 0, 40, 0
+O : -20, 60, -20
+
+first component is the DC component. It indicates a Translation.
+O is not a Circle because the third component does not match.

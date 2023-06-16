@@ -1,0 +1,3 @@
+In order to find solution for x to the linear system 7x - y = 15x, -6x + 8y = 15y, we write y in terms of x for both equations.
+From first equation, we get y = -8x. From second equation, we get y = -6/7 x.
+Therefore, -8x = -6/7 x, leaving the only solution for x being x = 0.

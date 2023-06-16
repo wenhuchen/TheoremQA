@@ -1,0 +1,1 @@
+Ramsey's theorem states that there exists a least positive integer R(r, s) for which every blue-red edge colouring of the complete graph on R(r, s) vertices contains a blue clique on r vertices or a red clique on s vertices. Let r=4 and s=4 and the answer is $R(4,4)=18$.

@@ -8229,7 +8229,7 @@
   {
     "id": "xinyi/differential_entropy.json",
     "question": "Roughly how many bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom if the half-life of radium is 80 years? Note that half-life is the median of the distribution.",
-    "prediction": 0,
+    "prediction": 80,
     "answer": 19,
     "rationale": "Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\nPlease read a math problem, and then think step by step to derive the answer. The answer needs to be in numerical form.\n\n### Input:\nRoughly how many bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom if the half-life of radium is 80 years? Note that half-life is the median of the distribution.\n\n### Response:\nWe need to calculate the number of bits required to represent the decay time of a radium atom. The decay time is equal to the half-life of radium, which is 80 years. We need to express the decay time to 3 digit accuracy. Therefore, we need to store 80 bits of information. Therefore, roughly 80 bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom.</s><s>",
     "answer_type": "integer",
@@ -8532,7 +8532,7 @@
   {
     "id": "xinyi/newtons_laws_3.json",
     "question": "A curve with a 120 m radius on a level road is banked at the correct angle for a speed of 20 m/s. If an automobile rounds this curve at 30 m/s, what is the minimum coefficient of static friction needed between tires and road to prevent skidding?",
-    "prediction": 0,
+    "prediction": 0.8,
     "answer": 0.34,
     "rationale": "Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\nPlease read a math problem, and then think step by step to derive the answer. The answer needs to be in numerical form.\n\n### Input:\nA curve with a 120 m radius on a level road is banked at the correct angle for a speed of 20 m/s. If an automobile rounds this curve at 30 m/s, what is the minimum coefficient of static friction needed between tires and road to prevent skidding?\n\n### Response:\nThe minimum coefficient of static friction needed between tires and road to prevent skidding is 0.8. This is calculated by finding the radius of curvature of the curve (120 m) and the speed of the automobile (30 m/s). The radius of curvature is then used to calculate the centripetal acceleration (20 m/s^2) and the coefficient of static friction is calculated using the formula F = \u03bcFN, where F is the friction force, \u03bc is the coefficient of static friction and FN is the normal force.</s><s>",
     "answer_type": "float",
@@ -8602,12 +8602,12 @@
   {
     "id": "xinyi/rate_distortion_function_2.json",
     "question": "Let $R(D)$ be the rate distortion function for an i.i.d. process with probability mass function $p(x)$ and distortion function $d(x, \\hat{x})$ , $x \\in \\mathcal{X}$ , $\\hat{x} \\in \\hat{\\mathcal{X}}$. If we add a new reproduction symbol $\\hat{x}_0$ to $\\hat{\\mathcal{X}}$ with associated distortion $d(x, \\hat{x}_0)$, $x \\in \\mathcal{X}$, $R(D)$ will decrease. True or False?",
-    "prediction": 0,
+    "prediction": true,
     "answer": true,
     "rationale": "Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.\n\n### Instruction:\nPlease read a math problem, and then think step by step to derive the answer. The answer needs to be True/False.\n\n### Input:\nLet $R(D)$ be the rate distortion function for an i.i.d. process with probability mass function $p(x)$ and distortion function $d(x, \\hat{x})$ , $x \\in \\mathcal{X}$ , $\\hat{x} \\in \\hat{\\mathcal{X}}$. If we add a new reproduction symbol $\\hat{x}_0$ to $\\hat{\\mathcal{X}}$ with associated distortion $d(x, \\hat{x}_0)$, $x \\in \\mathcal{X}$, $R(D)$ will decrease. True or False?\n\n### Response:\nTrue. The rate distortion function $R(D)$ will decrease if we add a new reproduction symbol $\\hat{x}_0$ to $\\hat{\\mathcal{X}}$ with associated distortion $d(x, \\hat{x}_0)$, $x \\in \\mathcal{X}$. This is because the new distortion measure $d(x, \\hat{x}_0)$ will be smaller than the existing distortion measure $d(x, \\hat{x})$ for some $\\hat{x} \\in \\hat{\\mathcal{X}}$, resulting in a lower rate-distortion pair.</s><s>",
     "answer_type": "bool",
     "valid": false,
-    "correct": false
+    "correct": true
   },
   {
     "id": "xinyi/rotation.json",

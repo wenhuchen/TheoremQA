@@ -1,0 +1,51 @@
+To find the coefficient of rolling friction for each tire, we can use the formula for the work-energy principle:
+
+W = ΔK.E
+
+where W is the work done by the rolling friction force, and ΔK.E is the change in kinetic energy of the tire.
+
+The work done by the rolling friction force can be expressed as:
+
+W = - F_friction * d
+
+where F_friction is the rolling friction force and d is the distance traveled by the tire.
+
+The change in kinetic energy can be expressed as:
+
+ΔK.E = (1/2) * m * (v_final^2 - v_initial^2)
+
+where m is the mass of the tire, v_initial is the initial speed, and v_final is the final speed.
+
+Since the speed is reduced by half, v_final = 0.5 * v_initial.
+
+Now, we can express the rolling friction force as:
+
+F_friction = μ * F_normal
+
+where μ is the coefficient of rolling friction and F_normal is the normal force acting on the tire. Assuming the tire is on a horizontal surface, the normal force is equal to the gravitational force acting on the tire:
+
+F_normal = m * g
+
+where g is the acceleration due to gravity (approximately 9.81 m/s^2).
+
+Combining all the equations, we get:
+
+- μ * m * g * d = (1/2) * m * (v_final^2 - v_initial^2)
+
+Since we are interested in finding μ, we can rearrange the equation to solve for μ:
+
+μ = [(1/2) * (v_initial^2- v_final^2)] / (g * d)
+
+For the tire with 40 psi:
+
+μ_40 = [(1/2) * (3.5^2 - (0.5 * 3.5)^2)] / (9.81 * 18.1)
+
+μ_40 ≈ 0.0259
+
+For the tire with 105 psi:
+
+μ_105 = [(1/2) * (3.5^2 - (0.5 * 3.5)^2)] / (9.81 * 92.9)
+
+μ_105 ≈ 0.00505
+
+Therefore, the answer is [0.0259, 0.00505].

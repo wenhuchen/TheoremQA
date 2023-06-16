@@ -1,0 +1,1 @@
+let \\prod_{n=0}^{\\infty}(1+(\\frac{1}{2})^{2^n})=c. Multiply both sides by 1-1/2 and repeatedly using (1+x)(1-x)=1-x^2 to obtain c=2.

@@ -1,0 +1,1 @@
+Prime factorize 30! and remove 10^7 from its factors. Then compute the product mod 10 to find the remainder.

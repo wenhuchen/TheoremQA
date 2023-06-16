@@ -1,0 +1,1 @@
+This is a easy question. Can be directly computed via the definition of mean and variance.

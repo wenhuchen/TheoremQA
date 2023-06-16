@@ -1,0 +1,1 @@
+First calculate the short run industry supply curve to be Q = 1000 \sqrt{P} - 2000. Then, setting supply = demand, we can have 1000 \sqrt{P} - 2000 = -200P + 8000. Solving the equation, we can get equalibrium price P = 25 in this case.

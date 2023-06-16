@@ -6,7 +6,6 @@ from datetime import datetime
 import openai
 from time import sleep
 import argparse
-from collections import Counter
 from util import extract_answer
 
 parser = argparse.ArgumentParser()
@@ -31,8 +30,8 @@ def run_prompt(full_prompt: str):
     got_result = False
     while not got_result:
         try:
-            result = openai.ChatCompletion.create(
-                model='gpt-4-0314',
+            result = openai.op.create(
+                model='gpt-4',
                 messages=[{"role": "system", "content": SYSTEMQ},
                           {"role": "user", "content": full_prompt}],
                 max_tokens=1028,
@@ -42,6 +41,7 @@ def run_prompt(full_prompt: str):
             )
             got_result = True
         except Exception as e:
+            print('error:', e)
             sleep(3)
     result = result['choices'][0]['message']['content']
     return result

@@ -1,0 +1,8 @@
+By definition, K_f consists of elements x in U_5 such that x^2 is equal to the identity element 1 in U_5.
+We first find elements of U_5 to be [1, 2, 3, 4].
+Then, we iterate through the elements to see which ones are in K_f.
+x = 1, x^2 = 1 in U_5.
+x = 2, x^2 = 4 != 1 in U_5
+x = 3, x^2 = 4 != 1 in U_5
+x = 4, x^2 = 1 in U_5.
+Therefore, K_f = [1, 4].

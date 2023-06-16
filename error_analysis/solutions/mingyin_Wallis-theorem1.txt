@@ -1,0 +1,1 @@
+Suppose x_1=c. Using x_{n+1}=n/x_n, one can find the expression of x_n. plug the expression of x_n and x_{n+1} into the condition \lim x_n/x_{n+1}=1 and use Wallis formula, one can have c^2=2/\pi.

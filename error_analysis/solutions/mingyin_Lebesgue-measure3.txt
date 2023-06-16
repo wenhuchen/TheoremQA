@@ -1,0 +1,1 @@
+since cos(x+y) is rational corresponds to a measure 0 set. As a result, we can drop this constraint for E. Then from sinx<1/2, we have x<\pi/6, and y\in[0,1]. Therefore, the answer is \pi/6*1=\pi/6=0.5235987667. 

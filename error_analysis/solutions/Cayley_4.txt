@@ -1,0 +1,1 @@
+According to Cayley's formula, the number of labelled rooted forests on n vertices is (n + 1)^{n − 1}. Let n=6 and we get the answer at 16807.

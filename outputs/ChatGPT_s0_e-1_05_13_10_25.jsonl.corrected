@@ -6712,7 +6712,7 @@
   {
     "id": "xinyi/differential_entropy.json",
     "question": "Roughly how many bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom if the half-life of radium is 80 years? Note that half-life is the median of the distribution.",
-    "prediction": 0,
+    "prediction": 10,
     "answer": 19,
     "rationale": "The decay of a radium atom follows an exponential distribution with a half-life of 80 years. To describe the decay time of a radium atom with 3 digit accuracy, we need to know the number of years to 3 significant figures. \n\nSince the half-life is the median of the distribution, we can assume that the distribution is symmetric. Therefore, the mean and the median are equal. The mean of an exponential distribution with a half-life of 80 years is given by:\n\nmean = half-life * ln(2)\n\nmean = 80 * ln(2)\n\nmean \u2248 55.9 years\n\nTo get 3 digit accuracy, we need to know the number of years to the nearest 0.1 year. This requires log2(1000) \u2248 10 bits of information. Therefore, the answer is:\n\nTherefore, roughly 10 bits are required on the average to describe to 3 digit accuracy the decay time (in years) of a radium atom.",
     "answer_type": "integer",
@@ -6973,7 +6973,7 @@
   {
     "id": "xinyi/newtons_laws_2.json",
     "question": "Two bicycle tires are set rolling with the same initial speed of 3.5 m/s on a long, straight road, and the distance each travels before its speed is reduced by half is measured. One tire is inflated to a pressure of 40 psi and goes 18.1 m; the other is at 105 psi and goes 92.9 m. What is the coefficient of rolling friction for each? Assume that the net horizontal force is due to rolling friction only.",
-    "prediction": 0.005,
+    "prediction": [0.018, 0.005],
     "answer": [
       0.0259,
       0.00505
@@ -6994,7 +6994,7 @@
   {
     "id": "xinyi/potential_energy.json",
     "question": "A bungee cord is 30.0 m long and, when stretched a distance x, it exerts a restoring force of magnitude kx. Your father-in-law (mass 95.0 kg) stands on a platform 45.0 m above the ground, and one end of the cord is tied securely to his ankle and the other end to the platform. You have promised him that when he steps off the platform he will fall a maximum distance of only 41.0 m before the cord stops him. You had several bungee cords to select from, and you tested them by stretching them out, tying one end to a tree, and pulling on the other end with a force of 380.0 N. When you do this, what distance (in m) will the bungee cord that you should select have stretched?",
-    "prediction": 0,
+    "prediction": 3.62,
     "answer": 0.602,
     "rationale": "We can use the conservation of energy to solve this problem. At the maximum distance of 41.0 m, all of the initial potential energy of the father-in-law is converted into elastic potential energy of the bungee cord. Therefore, we can write:\n\n(1/2)kx^2 = mgh\n\nwhere k is the spring constant of the bungee cord, x is the distance it stretches, m is the mass of the father-in-law, g is the acceleration due to gravity, and h is the initial height of the father-in-law above the ground.\n\nWe can solve for k by rearranging the equation:\n\nk = 2mgh/x^2\n\nSubstituting the given values, we get:\n\nk = 2 * 95.0 kg * 9.81 m/s^2 * 45.0 m / (41.0 m)^2 = 104.9 N/m\n\nNow we can use Hooke's law to find the distance the bungee cord will stretch when a force of 380.0 N is applied:\n\nF = kx\n\nx = F/k = 380.0 N / 104.9 N/m = 3.62 m\n\nTherefore, the bungee cord that should be selected will stretch by 3.62 m when a force of 380.0 N is applied.",
     "answer_type": "float",
