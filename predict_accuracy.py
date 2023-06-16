@@ -76,8 +76,7 @@ Output:"""
     return result
 
 def get_decimal_with_wolfram(string: str) -> float:
-    API_KEY = 'AU7JWQ-87JVYK8VW2'
-    client = wolframalpha.Client(API_KEY)
+    client = wolframalpha.Client(os.getenv('WOLFRAM_KEY'))
     for ex in client.query(f'compute {string}').pods:
         if ex['@title'] in ['Decimal approximation', 'Decimal form']:
             for sub in ex.subpods:
