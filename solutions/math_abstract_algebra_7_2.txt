@@ -1,0 +1,6 @@
+Suppose the inverse of [[3, 5], [4, 6]] in Z_7 is M = [[a, b], [c, d]], then, by definition of inverse, [[3, 5], [4, 6]][[a, b], [c, d]] = [[1, 0], [0, 1]].
+This gives us a number of equations: 3a = 5c = 1, 3b + 5d = 0, 4a + 6c = 0, 4b + 6d = 1. Since we want to find M[0][1] which is b, we are only interested in solving the equation involving b and d.
+Multiplying both sides of 3b + 5d = 0 by 6, we get: 4b + 2d = 0 in Z_7.
+Multiplying both sides of 4b + 6d = 1 by 5, we get: 6b + 2d = 5 in Z_7.
+Therefore, subtracting the equations, we can have 2b = 5 in Z_7.
+Solving for b, we have b = 6 in Z_7.

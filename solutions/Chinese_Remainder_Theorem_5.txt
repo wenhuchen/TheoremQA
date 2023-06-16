@@ -1,0 +1,1 @@
+Notice that x == 1 (mod 2) is a necessary condition of x == 3 (mod 4). Therefore, it is equivalent to solve the equation {x == 2 (mod 3), x == 3 (mod 4), x == 4 (mod 5)}. By Chinese Remainder Theorem, we know that x = 2*40 + 3*45 + 4*36 = 359 = 59 (mod 3*4*5). Since 59 is smaller than LCM(3, 4, 5)=60, the answer is 59.

@@ -1,0 +1,10 @@
+To solve for f(-1), we first need to determine the function for the polynomial. Plugging the three passing points back into the equation, we get:
+-1 = a + b + c
+3 = a + 2b + 4c
+13 = a + 3b + 9c
+Subtracting the second equation by the first equation, we get b + 3c = 4. 
+Subtracting the third equation by the first equation, we get 2b + 8c = 14. Multiply both sides by 1/2, we get b + 4c = 7.
+Subtracting the two equations that we get, we get c = 3.
+Plugging c = 3 back into the equations, we can solve for a and b: a = 1, b = -5.
+Therefore, the function for the polynomial is f(t) = 1 - 5t + 3t^2.
+Therefore, f(-1) = 1 + 5 + 3 = 9.

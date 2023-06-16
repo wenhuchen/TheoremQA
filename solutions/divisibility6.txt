@@ -1,0 +1,4 @@
+30a0b03 = 3, 000, 003+a∗10, 000+b∗100 ≡ 400, 003+a∗900+b∗9 ≡ 10, 003+a∗(−10)+b∗9 ≡
+903+a∗3+b∗9 ≡ (−7)+a∗3+b∗9 ≡ 3a+9b−7 ≡ 0 mod 13. Therefore, 3a+9b ≡ 7 ≡ 20 ≡ 33
+mod 13. After dividing by 3 because (3, 13) = 1, we get a + 3b ≡ 11 mod 13. Thus we have
+a = 2, b = 3 or a = 5, b = 2 or a = 8, b = 1.

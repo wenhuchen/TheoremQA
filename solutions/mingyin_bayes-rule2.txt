@@ -1,0 +1,1 @@
+The general formula holds with $\mathbb{P}\left(X_1<X_2<X_3\right)=\frac{\left(1-p_1\right)\left(1-p_2\right) p_2 p_3^2}{\left(1-p_2 p_3\right)\left(1-p_1 p_2 p_3\right)}$.

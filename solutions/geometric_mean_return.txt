@@ -1,0 +1,15 @@
+annual_returns = [0.0245, 0.0542, -0.1383]
+n_years = len(annual_returns)
+
+# Add 1 to each return
+returns_plus_one = [(1 + x) for x in annual_returns]
+
+# Multiply the results together
+mult_returns = 1
+for r in returns_plus_one:
+    mult_returns *= r
+
+# Calculate the nth root and subtract 1
+compound_return = (mult_returns ** (1/n_years)) - 1
+print(compound_return)
+-0.023669

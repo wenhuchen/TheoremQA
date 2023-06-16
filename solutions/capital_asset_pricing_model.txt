@@ -1,0 +1,15 @@
+To calculate the expected rate of return, we can use the Capital Asset Pricing Model (CAPM) formula:
+
+Expected Rate of Return = Risk-Free Rate + Beta * (Market Return - Risk-Free Rate)
+
+In this case, the risk-free rate is the yield on a UK 10-year treasury, which is 2.8%. The market return is given as 8.6%, and the Beta for the stock is 1.4.
+
+Expected Rate of Return = 2.8% + 1.4 * (8.6% - 2.8%)
+
+Expected Rate of Return = 2.8% + 1.4 * 5.8%
+
+Expected Rate of Return = 2.8% + 8.12%
+
+Expected Rate of Return = 10.92%
+
+Therefore, the answer is 10.92.

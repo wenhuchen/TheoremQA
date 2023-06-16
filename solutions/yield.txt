@@ -1,0 +1,17 @@
+def bond_price(C, F, r, n):
+    price = (C * (1 - (1 + r)**-n) / r) + (F / (1 + r)**n)
+    return price
+
+# Define given values
+annual_coupon_rate = 0.08
+years_to_maturity = 18
+yield_rate = 0.09
+
+# Calculate annual coupon payment
+face_value = 100
+annual_coupon_payment = annual_coupon_rate * face_value
+
+# Calculate bond price
+price = bond_price(annual_coupon_payment, face_value, yield_rate, years_to_maturity)
+print("The price of the bond is:", price)
+91.1

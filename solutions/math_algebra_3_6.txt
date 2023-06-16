@@ -1,0 +1,3 @@
+Let the B-coordinate vector of x be [a, b]. Then, since the basis vectors of B are v_1 = [3,1] and v_2 = [-1, 3], we can write x = a[3, 1] + b[-1, 3] = [10, 10].
+This gives us two equations: 3a - b = 10 and a + 3b = 10.
+Solving for a and b, we have a = 4 and b = 2. Therefore, the B-coordinate vector of x is [4, 2].
