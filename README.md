@@ -32,8 +32,8 @@ dataset = load_dataset("wenhu/TheoremQA")
 - theoremqa_test.json: this file contains all the annotated question-answer pairs.
 - theoremqa_visual_subset_test.json: this file contains the subset of visual questions if you want to specifically test that.
 - all_theorems.json: this file contains the textual description of all the theorems being covered.
-- solutions/*: this folder contains solutions for roughly 200 questions in TheoremQA.
 - error_analysis/*: this folder contains the error analysis results on the 200 question subset.  
+- solutions/*: this folder contains solutions for roughly 200 questions, which correspond to the problems used in error_analysis/
 - outputs/\*.json.corrected: this folder contains all the model outputs.
 
 Visualize the GPT-4 output in https://github.com/wenhuchen/TheoremQA/blob/main/visualize.ipynb. 
