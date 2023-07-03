@@ -32,11 +32,11 @@ dataset = load_dataset("wenhu/TheoremQA")
 - theoremqa_test.json: this file contains all the annotated question-answer pairs.
 - theoremqa_visual_subset_test.json: this file contains the subset of visual questions if you want to specifically test that.
 - all_theorems.json: this file contains the textual description of all the theorems being covered.
-- error_analysis/*: this folder contains the error analysis results on the 200 question subset.  
-- solutions/*: this folder contains solutions for roughly 200 questions, which correspond to the problems used in error_analysis/
+- error_analysis/*: this folder contains the error analysis results on the 180-question subset.  
+- solutions/*: this folder contains solutions for roughly 180 questions, which correspond to the problems used in error_analysis/
 - outputs/\*.json.corrected: this folder contains all the model outputs.
 
-Visualize the GPT-4 output in https://github.com/wenhuchen/TheoremQA/blob/main/visualize.ipynb. 
+Visualize the GPT-4 output at https://github.com/wenhuchen/TheoremQA/blob/main/visualize.ipynb. 
 
 ## Running Instruction
 
@@ -54,23 +54,23 @@ Visualize the GPT-4 output in https://github.com/wenhuchen/TheoremQA/blob/main/v
 ```
 python run_gpt4.py
 ```
-This will write otuput to outputs/GPT4_s0...
+This will write output to outputs/GPT4_s0...
 
 ### Program-of-Thoughts Prompting
 ```
 python run_gpt4_pot.py
 ```
-This will write otuput to outputs/GPT4_PoT_s0...
+This will write output to outputs/GPT4_PoT_s0...
 
 
 ### Evaluate model output
-You need to register an wolfram|alpha account to use their free API, checkout https://products.wolframalpha.com/api to register. Once you are done, you should receive an API_KEY.
+You need to register wolfram|alpha account to use their free API, checkout https://products.wolframalpha.com/api to register. Once you are done, you should receive an API_KEY.
 ```
 export OPENAI_KEY=[YOUR_KEY]
 export WOLFRAM_KEY=[YOUR_KEY]
 python predict_accuracy.py outputs/[YOUR_FILE]
 ```
-This will write a evaluation output as outputs/[YOUR_FILE].corrected
+This will write an evaluation output as outputs/[YOUR_FILE].corrected
 
 ### Analyze the model output
 ```
