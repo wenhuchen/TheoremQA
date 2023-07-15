@@ -328,9 +328,9 @@
     "Question": "Let W(t) be the standard Brownian motion, and 0 < s < t. Find the conditional PDF of W(s = 1/2) given that W(t = 1) = 2. What are the mean and variance? Return the list of [mean, variance].",
     "Answer": [
       1,
-      0
+      0.25
     ],
-    "Answer_type": "list of integer",
+    "Answer_type": "list of float",
     "Picture": null,
     "source": "website | https://www.probabilitycourse.com/chapter11/11_4_3_solved_probs.php",
     "id": "wenhuchen/wiener_process2.json",
