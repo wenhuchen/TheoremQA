@@ -90,6 +90,7 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | Claude-v1                             | PoT      | 25.9                        |
 | Claude-v1                             | CoT      | 24.9                        |
 | Claude-instant                        | CoT      | 23.6                        |
+| Codex (code-davinci-002)              | PoT      | 23.9                        |
 | GPT-3.5 (text-davinci-003)            | CoT      | 22.8                        |
 | GPT-3 (text-davinci-002)              | PoT      | 20.6                        |
 | GPT-3 (text-davinci-002)              | CoT      | 16.6                        |
