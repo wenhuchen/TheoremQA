@@ -9,6 +9,7 @@ import argparse
 from util import extract_code, extract_answer, impossible_questions, postprocess_number
 import func_timeout
 import numpy as np
+from litellm import completion
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--start", default=0, type=int)
@@ -33,7 +34,7 @@ def run_cot_prompt(full_prompt: str):
     got_result = False
     while not got_result:
         try:
-            result = openai.ChatCompletion.create(
+            result = completion(
                 engine='ChatGPT',
                 messages=[{"role": "system", "content": SYSTEMQ},
                           {"role": "user", "content": full_prompt}],
@@ -41,6 +42,7 @@ def run_cot_prompt(full_prompt: str):
                 temperature=0.0,
                 top_p=1,
                 n=1,
+                azure=True,
             )
             got_result = True
         except Exception as e:
@@ -62,7 +64,7 @@ def solve():
     got_result = False
     while not got_result:
         try:
-            result = openai.ChatCompletion.create(
+            result = completion(
                 engine='ChatGPT',
                 messages=[{"role": "system", "content": SYSTEMQ},
                           {"role": "user", "content": full_prompt}],
@@ -70,6 +72,7 @@ def solve():
                 temperature=0.0,
                 top_p=1,
                 n=1,
+                azure=True,
             )
             got_result = True
         except Exception as e:
@@ -79,10 +82,10 @@ def solve():
 
 
 if __name__ == "__main__":
-    openai.api_key = os.getenv('AZURE_KEY')
-    openai.api_type = 'azure'
-    openai.api_base = 'https://waterloogpt.openai.azure.com/'
-    openai.api_version = "2023-03-15-preview"
+    # litellm reads & sets the following env variables for users
+    os.environ['AZURE_API_BASE'] = "https://waterloogpt.openai.azure.com/"
+    os.environ['AZURE_API_VERSION'] = "2023-03-15-preview"
+    os.environ['AZURE_API_KEY'] = os.getenv('AZURE_KEY')
 
     with open('theoremqa_test.json', 'r') as f:
         test_set = json.load(f)
