@@ -57,7 +57,9 @@ def run_prompt(full_prompt: str):
     return result
 
 if __name__ == "__main__":
-    os.environ['OPENAI_API_KEY'] = "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"
+    # this is used by litellm to access the API
+    os.environ['OPENAI_API_KEY'] = "YOUR_API_KEY"
+    
 
     with open('theoremqa_test.json', 'r') as f:
         test_set = json.load(f)
