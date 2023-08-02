@@ -12,7 +12,6 @@ parser.add_argument("--version", default="v1", type=str)
 parser.add_argument("--answered", default=None, type=str)
 
 args = parser.parse_args()
-API_KEY = os.getenv('CLAUDE_KEY')
 
 if args.version == 'v1':
     MODLE_NAME = 'claude-v1'
@@ -23,34 +22,22 @@ elif args.version == 'instant':
 else:
     raise ValueError(args.version)
 
-def run_prompt(full_prompt: str):
+def run_claude(full_prompt: str, answer_type: bool):
+    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
+    if answer_type == 'option':
+        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
+    elif answer_type == 'bool':
+        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is True/False' {anthropic.AI_PROMPT}",
+    else:
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
+
     client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
     response = client.completions.create(
         model=MODLE_NAME,
         max_tokens_to_sample=1024,
-        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
+        prompt=prompt,
     )
-    return response.completion
-
-
-def run_bool_prompt(full_prompt: str):
-    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
-    response = client.completions.create(
-        model=MODLE_NAME,
-        max_tokens_to_sample=1024,
-        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
-    )
-    return response.completion
-
-
-def run_option_prompt(full_prompt: str):
-    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
-    response = client.completions.create(
-        model=MODLE_NAME,
-        max_tokens_to_sample=1024,
-        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
-    )
-    return response.completion
+    return response.completion                        
 
 
 def main():
@@ -80,13 +67,7 @@ def main():
             writer.write(answered_set[example['id']] + '\n')
             continue
 
-        if example['Answer_type'] == 'bool':
-            answer = run_bool_prompt(example['Question'])
-        elif example['Answer_type'] == 'option':
-            answer = run_option_prompt(example['Question'])
-        else:
-            answer = run_prompt(example['Question'])
-        result = answer
+        result = run_claude(example['Question'], example['Answer_type'])
 
         prediction = None
         for sent in result.split('\n')[::-1]:
