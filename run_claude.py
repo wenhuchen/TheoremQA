@@ -1,4 +1,4 @@
-import anthropic
+from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 import os
 import json
 import argparse
@@ -8,59 +8,49 @@ import re
 parser = argparse.ArgumentParser()
 parser.add_argument("--start", default=0, type=int)
 parser.add_argument("--end", default=-1, type=int)
-parser.add_argument("--version", default="claude-v1", type=str)
+parser.add_argument("--version", default="v1", type=str)
 parser.add_argument("--answered", default=None, type=str)
 
 args = parser.parse_args()
 API_KEY = os.getenv('CLAUDE_KEY')
 
-def run_prompt(full_prompt: str):
-    c = anthropic.Client(API_KEY)
-    response = c.completion_stream(
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {anthropic.AI_PROMPT}",
-        stop_sequences=[anthropic.HUMAN_PROMPT],
-        max_tokens_to_sample=1024,
-        model=args.version,
-        temperature=0.0,
-        stream=False,
-    )
+if args.version == 'v1':
+    MODLE_NAME = 'claude-v1'
+elif args.version == 'v2':
+    MODLE_NAME = 'claude-2'
+elif args.version == 'instant':
+    MODLE_NAME = 'claude-instant'
+else:
+    raise ValueError(args.version)
 
-    tmps = []
-    for tmp in response:
-        tmps.append(tmp)
-    return tmps[0]
+def run_prompt(full_prompt: str):
+    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
+    response = client.completions.create(
+        model=MODLE_NAME,
+        max_tokens_to_sample=1024,
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
+    )
+    return response.completion
+
 
 def run_bool_prompt(full_prompt: str):
-    c = anthropic.Client(API_KEY)
-    response = c.completion_stream(
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n PPlease think step by step, and then conclude the answer as `therefore, the answer is True/False' {anthropic.AI_PROMPT}",
-        stop_sequences=[anthropic.HUMAN_PROMPT],
+    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
+    response = client.completions.create(
+        model=MODLE_NAME,
         max_tokens_to_sample=1024,
-        model=args.version,
-        temperature=0.0,
-        stream=False,
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
     )
+    return response.completion
 
-    tmps = []
-    for tmp in response:
-        tmps.append(tmp)
-    return tmps[0]
 
 def run_option_prompt(full_prompt: str):
-    c = anthropic.Client(API_KEY)
-    response = c.completion_stream(
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
-        stop_sequences=[anthropic.HUMAN_PROMPT],
+    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
+    response = client.completions.create(
+        model=MODLE_NAME,
         max_tokens_to_sample=1024,
-        model=args.version,
-        temperature=0.0,
-        stream=False,
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
     )
-
-    tmps = []
-    for tmp in response:
-        tmps.append(tmp)
-    return tmps[0]
+    return response.completion
 
 
 def main():
@@ -82,7 +72,7 @@ def main():
     else:
         test_set = test_set[args.start : args.end]
 
-    filename = f'outputs/{args.version}_s{args.start}_e{args.end}_{dt_string}.jsonl'
+    filename = f'outputs/anthropic_{args.version}_s{args.start}_e{args.end}_{dt_string}.jsonl'
     writer = open(filename, 'w')
     for example in test_set:
 
@@ -96,7 +86,7 @@ def main():
             answer = run_option_prompt(example['Question'])
         else:
             answer = run_prompt(example['Question'])
-        result = answer['completion']
+        result = answer
 
         prediction = None
         for sent in result.split('\n')[::-1]:
