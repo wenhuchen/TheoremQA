@@ -84,7 +84,7 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | GPT-4                                 | PoT      | 52.4                        |
 | GPT-4                                 | CoT      | 43.8                        |
 | ChatGPT                               | PoT      | 35.6                        |
-| PaLM-2                                | CoT      | 31.8                        |
+| PaLM-2 (unicorn)                      | CoT      | 31.8                        |
 | ChatGPT                               | CoT      | 30.2                        |
 | GPT-3.5 (text-davinci-003)            | PoT      | 27.8                        |
 | Claude-v1                             | PoT      | 25.9                        |
@@ -93,6 +93,7 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | Claude-instant                        | CoT      | 23.6                        |
 | Codex (code-davinci-002)              | PoT      | 23.9                        |
 | GPT-3.5 (text-davinci-003)            | CoT      | 22.8                        |
+| PaLM-2 (bison)                        | CoT      | 21.0                        |
 | GPT-3 (text-davinci-002)              | PoT      | 20.6                        |
 | GPT-3 (text-davinci-002)              | CoT      | 16.6                        |
 | Alpaca                                | CoT      | 13.5                        |
