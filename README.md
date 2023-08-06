@@ -97,7 +97,6 @@ python analyze_results.py outputs/[YOUR_FILE].corrected
 | GPT-3 (text-davinci-002)              | CoT      | 16.6                        |
 | Alpaca                                | CoT      | 13.5                        |
 | Vicuna                                | CoT      | 12.9                        |
-| Vicuna                                | CoT      | 12.9                        |
 | MOSS                                  | CoT      | 12.2                        |
 | StarChat                              | PoT      | 12.2                        |
 | InstructCodeT5+                       | PoT      | 11.6                        |
