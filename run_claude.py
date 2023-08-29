@@ -23,7 +23,6 @@ else:
     raise ValueError(args.version)
 
 def run_claude(full_prompt: str, answer_type: bool):
-    client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
     if answer_type == 'option':
         prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
     elif answer_type == 'bool':
