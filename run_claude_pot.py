@@ -1,4 +1,4 @@
-import anthropic
+from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 import os
 import json
 import argparse
@@ -30,11 +30,11 @@ SUFFIX = """I'm writing a Python program to solve the question. Let's implement 
 
 def run_claude(full_prompt: str, answer_type: bool):
     if answer_type == 'option':
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {AI_PROMPT}",
     elif answer_type == 'bool':
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is True/False' {anthropic.AI_PROMPT}",
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is True/False' {AI_PROMPT}",
     else:
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} {anthropic.AI_PROMPT} {SUFFIX}",
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} {AI_PROMPT} {SUFFIX}",
 
     client = Anthropic(api_key=os.environ["CLAUDE_KEY"])
     response = client.completions.create(
