@@ -24,9 +24,9 @@ else:
 
 def run_claude(full_prompt: str, answer_type: bool):
     if answer_type == 'option':
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {anthropic.AI_PROMPT}",
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is (a)/(b)/(c)/(d)'. {AI_PROMPT}",
     elif answer_type == 'bool':
-        prompt=f"{anthropic.HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is True/False' {anthropic.AI_PROMPT}",
+        prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is True/False' {AI_PROMPT}",
     else:
         prompt=f"{HUMAN_PROMPT} Question: {full_prompt} \n Please think step by step, and then conclude the answer as `therefore, the answer is ...' {AI_PROMPT}",
 
