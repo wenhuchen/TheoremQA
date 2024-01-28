@@ -22,7 +22,7 @@ The dataset covers a wide range of topics listed below:
 </p>
 
 ## Huggingface
-Our dataset is on Huggingface now: https://huggingface.co/datasets/wenhu/TheoremQA
+Our dataset is on Huggingface now: https://huggingface.co/datasets/TIGER-Lab/TheoremQA
 ```
 from datasets import load_dataset
 dataset = load_dataset("wenhu/TheoremQA")
