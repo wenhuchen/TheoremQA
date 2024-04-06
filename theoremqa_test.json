@@ -9273,8 +9273,8 @@
   },
   {
     "Question": "Consider the set S:= {2^{-m} + n^{-1}: m, n \\in N}. What is the maximum of S?",
-    "Answer": false,
-    "Answer_type": "bool",
+    "Answer": 1.5,
+    "Answer_type": "float",
     "Picture": null,
     "source": "class",
     "id": "elainewan/math_real_analysis_additional_4.json",
