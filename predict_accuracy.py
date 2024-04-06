@@ -148,7 +148,7 @@ def compare_two_list(pred, gt):
     elif any([not isinstance(x, (int, float)) for x in pred]):
         return False
     else:
-        pred = sorted(prediction)
+        pred = sorted(pred)
         gt = sorted(gt)
         return all([compare_two_numbers(p, g) for p, g in zip(pred, gt)])
 
@@ -287,7 +287,6 @@ if __name__ == "__main__":
     new_entries = []
     correct = 0
     for entry in tqdm(all_entries):
-        need_further_parsing = False
         prediction = entry['prediction']
         if 'answer' in entry:
             gt = entry['answer']
