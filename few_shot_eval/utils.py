@@ -3,20 +3,7 @@ from number_utils import *
 from latex2sympy2 import latex2sympy
 
 
-def extract_theoremqa_answer(pred_str: str, answer_flag: bool):
-    if answer_flag:
-        # Extract the numbers out of the string
-        if '=' in pred_str:
-            pred_str = pred_str.split('=')[-1].strip()
-        pred_str = clean_units(pred_str)
-        if re.match(r'-?[\d\.]+\s\D+$', pred_str):
-            pred_str = pred_str.split(' ')[0]
-        elif re.match(r'-?[\d\.]+\s[^\s]+$', pred_str):
-            pred_str = pred_str.split(' ')[0]
-        pred = pred_str
-    else:
-        pred = pred_str
-
+def extract_theoremqa_answer(pred: str, answer_flag: bool = True):
     if any([option in pred.lower() for option in ['yes', 'true']]):
         pred = 'True'
     elif any([option in pred.lower() for option in ['no', 'false']]):
@@ -24,17 +11,25 @@ def extract_theoremqa_answer(pred_str: str, answer_flag: bool):
     elif any([option in pred.lower() for option in ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)']]):
         pass
     else:
-        try:
-            pred = str(eval(pred))
-            # If it's working, we are all good!
-        except Exception:
+        if answer_flag:
+            # Extract the numbers out of the string
+            pred = pred.split('=')[-1].strip()
+            pred = clean_units(pred)
             try:
-                # Let's try to convert that to sympy version and then execture
-                pred = str(latex2sympy(pred))
-                pred = str(eval(pred))
+                tmp = str(latex2sympy(pred))
+                pred = str(eval(tmp))
             except Exception:
-                # Still no? Then give up.
-                pass
+                if re.match(r'-?[\d\.]+\s\D+$', pred):
+                    pred = pred.split(' ')[0]
+                elif re.match(r'-?[\d\.]+\s[^\s]+$', pred):
+                    pred = pred.split(' ')[0]
+        else:
+            # desparate search over the last number
+            preds = re.findall(r'-?\d*\.?\d+', pred)
+            if(len(preds) >= 1):
+                pred = preds[-1]
+            else:
+                pred = ''
 
     return pred
 
