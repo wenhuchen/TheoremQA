@@ -139,7 +139,7 @@ def get_short_format(qas: list):
     tmp = "You are supposed to provide a solution to a given problem.\n\n"
     for q, a in qas:
         tmp += '\n' + 'Problem:\n{query}\nSolution:\n{response}\n'.format(query=q, response=a)
-    prefix = '\n' + 'Problem:\n{query}\nSolution\n'
+    prefix = '\n' + 'Problem:\n{query}\nSolution:\n'
 
     return tmp, prefix
 
